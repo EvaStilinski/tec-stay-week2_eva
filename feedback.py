@@ -1,7 +1,7 @@
-#pip install nltk
+# pip install nltk
 
-#The next code snippet shows how to perform basic sentiment analysis using the VADER sentiment analyzer from NLTK. The sentiment analysis assigns a positive, negative, or neutral sentiment label based on the sentiment score.
-#Simulates how a customer service agent would analyze customer feedback to determine the customer's sentiment.
+# The next code snippet shows how to perform basic sentiment analysis using the VADER sentiment analyzer from NLTK. The sentiment analysis assigns a positive, negative, or neutral sentiment label based on the sentiment score.
+# Simulates how a customer service agent would analyze customer feedback to determine the customer's sentiment.
 
 import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
@@ -31,10 +31,11 @@ sid = SentimentIntensityAnalyzer()
 # Analyze sentiments and tokenize words
 for i, feedback in enumerate(feedbacks):
     sentiment_scores = sid.polarity_scores(feedback)
-    sentiment = "positive" if sentiment_scores['compound'] > 0 else "negative" if sentiment_scores['compound'] < 0 else "neutral"
-    
+    sentiment = "positive" if sentiment_scores[
+        'compound'] > 0 else "negative" if sentiment_scores['compound'] < 0 else "neutral"
+
     words = word_tokenize(feedback)  # Tokenize words for the current feedback
-    
+
     print(f"Feedback: {feedback}")
     print(f"Sentiment: {sentiment}")
     print("Words:", words)
